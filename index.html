@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Burfoot &amp; Co. — A world they can wear. A future they'll protect.</title>
+  <meta name="description" content="Burfoot is a children's clothing house built on a picture book. Interchangeable patches, radical transparency, and one measurable act of conservation for every garment sold." />
+  <meta name="theme-color" content="#151b2e" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%8C%B3%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ░░░ PAPER GRAIN / TEXTURE OVERLAY ░░░ -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ░░░ NAVIGATION ░░░ -->
+<header class="nav" data-nav>
+  <a class="nav__brand" href="#top" aria-label="Burfoot &amp; Co. — home">
+    <svg class="nav__mark" viewBox="0 0 64 64" aria-hidden="true">
+      <!-- toes -->
+      <ellipse cx="18" cy="14" rx="6" ry="7" />
+      <ellipse cx="30" cy="11" rx="5.5" ry="7" />
+      <ellipse cx="41" cy="13" rx="5" ry="6" />
+      <ellipse cx="50" cy="18" rx="4.5" ry="5" />
+      <!-- foot / leaf body -->
+      <path d="M16 26 C10 34, 12 50, 22 56 C34 62, 52 56, 52 42 C52 32, 46 24, 38 22 Z"
+            fill="none" stroke="currentColor" stroke-width="3" />
+      <!-- leaf vein -->
+      <path d="M40 28 C34 34, 30 42, 28 52 M40 30 C36 30, 32 30, 28 34 M38 38 C34 38, 30 39, 28 42 M36 46 C32 46, 30 47, 28 48"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+    <span class="nav__wordmark">
+      <em>Burfoot</em><span class="nav__amp">&amp;</span><span>Co.</span>
+    </span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#mission">Our Mission</a>
+    <a href="#story">Our Story</a>
+    <a href="#sustainability">Sustainability</a>
+    <a href="#shop">Shop</a>
+    <a href="#book">The Book</a>
+  </nav>
+
+  <a class="nav__cta" href="#shop">
+    <span>Enter the wardrobe</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </a>
+</header>
+
+<!-- ░░░ 01 HERO / CROWN OF THE TREE ░░░ -->
+<section class="sky" id="top" data-section="sky">
+  <div class="sky__weather" aria-hidden="true">
+    <span class="sky__sun"></span>
+    <span class="sky__bird sky__bird--a">𓅫</span>
+    <span class="sky__bird sky__bird--b">𓅪</span>
+    <span class="sky__bird sky__bird--c">𓅭</span>
+  </div>
+
+  <!-- canopy leaves above -->
+  <svg class="canopy" viewBox="0 0 1600 420" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <radialGradient id="leafA" cx="50%" cy="60%" r="60%">
+        <stop offset="0%" stop-color="#6b8a5a"/><stop offset="100%" stop-color="#2f4431"/>
+      </radialGradient>
+      <radialGradient id="leafB" cx="50%" cy="60%" r="60%">
+        <stop offset="0%" stop-color="#8aa374"/><stop offset="100%" stop-color="#3d5a3c"/>
+      </radialGradient>
+    </defs>
+    <g class="canopy__cluster">
+      <ellipse cx="180"  cy="240" rx="210" ry="170" fill="url(#leafA)"/>
+      <ellipse cx="460"  cy="180" rx="260" ry="200" fill="url(#leafB)"/>
+      <ellipse cx="820"  cy="210" rx="310" ry="220" fill="url(#leafA)"/>
+      <ellipse cx="1180" cy="170" rx="280" ry="210" fill="url(#leafB)"/>
+      <ellipse cx="1470" cy="240" rx="230" ry="180" fill="url(#leafA)"/>
+    </g>
+  </svg>
+
+  <div class="hero">
+    <aside class="hero__meta">
+      <span class="tag">Est. MMXXVI</span>
+      <span class="tag">Burfoot &amp; Co.</span>
+      <span class="tag">A Naturalist's Wardrobe</span>
+    </aside>
+
+    <h1 class="hero__title">
+      <span class="line">A world</span>
+      <span class="line line--em">they&nbsp;can&nbsp;wear.</span>
+      <span class="line">A future</span>
+      <span class="line line--em line--ink">they'll&nbsp;protect.</span>
+    </h1>
+
+    <figure class="hero__portrait">
+      <img src="assets/burfoot.jpeg" alt="Burfoot, a curious forest creature crowned with flowers and antlers." />
+      <figcaption>
+        <span class="fig-no">Portrait №01</span>
+        <span class="fig-name"><em>Burfoot</em> · of the Canopy</span>
+        <span class="fig-lat">Velcrofolius fabulosus</span>
+      </figcaption>
+    </figure>
+
+    <p class="hero__lede">
+      A children's clothing house born of a picture book. Garments with
+      interchangeable patches — a wardrobe that unfolds like a story, and a
+      brand that plants the story back into the world.
+    </p>
+
+    <a class="scroll-cue" href="#prologue" aria-label="Descend into the story">
+      <span>Descend into the story</span>
+      <span class="scroll-cue__line"></span>
+    </a>
+  </div>
+</section>
+
+<!-- ░░░ 02 PROLOGUE / FIRST TRUNK REVEAL ░░░ -->
+<section class="prologue" id="prologue" data-section="prologue">
+  <div class="trunk trunk--start" aria-hidden="true">
+    <div class="trunk__bar"></div>
+    <svg class="trunk__flourish" viewBox="0 0 600 200" preserveAspectRatio="none">
+      <path d="M300 0 C 280 40, 330 80, 300 140 S 270 200, 300 200" fill="none" stroke="#2a1c10" stroke-width="1" opacity=".35"/>
+    </svg>
+  </div>
+
+  <div class="prologue__grid">
+    <p class="prologue__kicker">— I —</p>
+    <blockquote class="prologue__quote">
+      <p>
+        <span>One story</span> becomes a world.
+        <span>One character</span> leads the journey.
+        <span>One mission</span> drives it&nbsp;forward.
+      </p>
+    </blockquote>
+    <p class="prologue__byline">from the first page of Burfoot</p>
+
+    <div class="prologue__note">
+      <div class="specimen-label">
+        <span class="specimen-label__no">Field Note №00</span>
+        <span class="specimen-label__title">How to read this tree</span>
+        <p>Descend. The canopy gives way to branches — three ecosystems, three
+        collections, and a limited fourth. At the roots, the ledger: where every
+        thread comes from and where every garment sends&nbsp;one measurable act
+        of&nbsp;good.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 03 FOREST BRANCH ░░░ -->
+<section class="branch branch--forest" id="forest" data-section="forest">
+  <div class="branch__backdrop" aria-hidden="true">
+    <div class="mist"></div>
+    <div class="pines"></div>
+  </div>
+
+  <div class="trunk" aria-hidden="true"><div class="trunk__bar"></div></div>
+
+  <svg class="branch__arm branch__arm--left" viewBox="0 0 700 260" aria-hidden="true">
+    <path d="M700 60 C 540 70, 420 90, 280 150 C 220 180, 160 200, 80 210" fill="none" stroke="#2a1c10" stroke-width="14" stroke-linecap="round"/>
+    <path d="M700 60 C 540 70, 420 90, 280 150 C 220 180, 160 200, 80 210" fill="none" stroke="#4a3522" stroke-width="8" stroke-linecap="round"/>
+    <!-- tiny leaves -->
+    <g fill="#5a7347">
+      <ellipse cx="430" cy="120" rx="10" ry="5" transform="rotate(-30 430 120)"/>
+      <ellipse cx="300" cy="160" rx="10" ry="5" transform="rotate(-20 300 160)"/>
+      <ellipse cx="160" cy="200" rx="10" ry="5" transform="rotate(-10 160 200)"/>
+    </g>
+  </svg>
+
+  <header class="branch__header">
+    <p class="branch__num">Collection I · Forest</p>
+    <h2 class="branch__title"><em>Quiet</em> <span>understory,</span><br/>loud&nbsp;imagination.</h2>
+    <p class="branch__copy">
+      Mossed and mushroomed, pine-dark and cedar-warm. Every garment in the
+      Forest collection adopts one verified act of reforestation — a sapling
+      planted, a hectare monitored, a badger sett protected. Not a donation.
+      A&nbsp;deliverable.
+    </p>
+    <dl class="branch__spec">
+      <div><dt>Palette</dt><dd>Pantone 5743 · 7502 · 4975</dd></div>
+      <div><dt>Fibre</dt><dd>GOTS organic cotton · 230&thinsp;gsm</dd></div>
+      <div><dt>Impact</dt><dd>1 sapling planted &amp; geo-tagged</dd></div>
+    </dl>
+  </header>
+
+  <figure class="garment garment--forest" data-garment>
+    <div class="garment__thread"></div>
+    <svg class="garment__hanger" viewBox="0 0 120 60" aria-hidden="true">
+      <path d="M60 4 L60 18 M20 46 Q60 18 100 46 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <svg class="garment__tee" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <linearGradient id="forestFabric" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#3a4a2e"/><stop offset="100%" stop-color="#243220"/>
+        </linearGradient>
+      </defs>
+      <path d="M60 80 L110 50 Q160 34 210 50 L260 80 L300 110 L270 160 L240 140 L240 280 L80 280 L80 140 L50 160 L20 110 Z"
+            fill="url(#forestFabric)" stroke="#0e1508" stroke-width="1.5"/>
+      <!-- stitched collar -->
+      <path d="M140 58 Q160 78 180 58" fill="none" stroke="#f1e9d4" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+      <!-- hook-and-loop plots -->
+      <rect x="110" y="120" width="46" height="46" rx="4" fill="#0e1508" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="165" y="170" width="46" height="46" rx="4" fill="#0e1508" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="205" y="110" width="36" height="36" rx="4" fill="#0e1508" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+    </svg>
+    <figcaption>
+      <span class="fig-no">Garment №FR-014</span>
+      <em>The Understory Tee</em>
+      <span>7 patch anchors · ages 2–6</span>
+    </figcaption>
+  </figure>
+
+  <div class="patch-field" data-field>
+    <!-- patches placed below -->
+  </div>
+</section>
+
+<!-- ░░░ 04 OCEAN BRANCH ░░░ -->
+<section class="branch branch--ocean" id="ocean" data-section="ocean">
+  <div class="branch__backdrop" aria-hidden="true">
+    <div class="waves"></div>
+    <div class="kelp"></div>
+  </div>
+
+  <div class="trunk" aria-hidden="true"><div class="trunk__bar"></div></div>
+
+  <svg class="branch__arm branch__arm--right" viewBox="0 0 700 260" aria-hidden="true">
+    <path d="M0 60 C 160 70, 280 90, 420 150 C 480 180, 540 200, 620 210" fill="none" stroke="#2a1c10" stroke-width="14" stroke-linecap="round"/>
+    <path d="M0 60 C 160 70, 280 90, 420 150 C 480 180, 540 200, 620 210" fill="none" stroke="#4a3522" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#3a6a74">
+      <ellipse cx="270" cy="120" rx="10" ry="5" transform="rotate(30 270 120)"/>
+      <ellipse cx="400" cy="160" rx="10" ry="5" transform="rotate(20 400 160)"/>
+      <ellipse cx="540" cy="200" rx="10" ry="5" transform="rotate(10 540 200)"/>
+    </g>
+  </svg>
+
+  <header class="branch__header branch__header--right">
+    <p class="branch__num">Collection II · Ocean</p>
+    <h2 class="branch__title"><em>Tide</em>&nbsp;in,<br/><span>wonder&nbsp;out.</span></h2>
+    <p class="branch__copy">
+      Indigo, salt-bleach, storm-teal. Each Ocean garment funds one verified
+      act of ocean conservation — a metre of reef restored, a ghost-net pulled,
+      a sea-grass bed re-planted. Tracked, tagged, and timestamped on your
+      buyer's ledger.
+    </p>
+    <dl class="branch__spec">
+      <div><dt>Palette</dt><dd>Pantone 7546 · 2175 · 5493</dd></div>
+      <div><dt>Fibre</dt><dd>Ocean-bound recycled cotton blend</dd></div>
+      <div><dt>Impact</dt><dd>1 m² of reef adopted &amp; monitored</dd></div>
+    </dl>
+  </header>
+
+  <figure class="garment garment--ocean" data-garment>
+    <div class="garment__thread"></div>
+    <svg class="garment__hanger" viewBox="0 0 120 60" aria-hidden="true">
+      <path d="M60 4 L60 18 M20 46 Q60 18 100 46 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <svg class="garment__tee" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <linearGradient id="oceanFabric" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#2e5c6e"/><stop offset="100%" stop-color="#16323c"/>
+        </linearGradient>
+      </defs>
+      <path d="M60 80 L110 50 Q160 34 210 50 L260 80 L300 110 L270 160 L240 140 L240 280 L80 280 L80 140 L50 160 L20 110 Z"
+            fill="url(#oceanFabric)" stroke="#081d24" stroke-width="1.5"/>
+      <path d="M140 58 Q160 78 180 58" fill="none" stroke="#f1e9d4" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+      <rect x="120" y="110" width="40" height="40" rx="4" fill="#081d24" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="170" y="150" width="50" height="50" rx="4" fill="#081d24" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="100" y="200" width="40" height="34" rx="4" fill="#081d24" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+    </svg>
+    <figcaption>
+      <span class="fig-no">Garment №OC-022</span>
+      <em>The Tidepool Raglan</em>
+      <span>9 patch anchors · ages 0–10</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ░░░ 05 JUNGLE BRANCH ░░░ -->
+<section class="branch branch--jungle" id="jungle" data-section="jungle">
+  <div class="branch__backdrop" aria-hidden="true">
+    <div class="haze"></div>
+    <div class="fronds"></div>
+  </div>
+
+  <div class="trunk" aria-hidden="true"><div class="trunk__bar"></div></div>
+
+  <svg class="branch__arm branch__arm--left" viewBox="0 0 700 260" aria-hidden="true">
+    <path d="M700 60 C 540 70, 420 90, 280 150 C 220 180, 160 200, 80 210" fill="none" stroke="#2a1c10" stroke-width="14" stroke-linecap="round"/>
+    <path d="M700 60 C 540 70, 420 90, 280 150 C 220 180, 160 200, 80 210" fill="none" stroke="#4a3522" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#9c7a2e">
+      <ellipse cx="430" cy="120" rx="12" ry="5" transform="rotate(-30 430 120)"/>
+      <ellipse cx="300" cy="160" rx="12" ry="5" transform="rotate(-20 300 160)"/>
+      <ellipse cx="160" cy="200" rx="12" ry="5" transform="rotate(-10 160 200)"/>
+    </g>
+  </svg>
+
+  <header class="branch__header">
+    <p class="branch__num">Collection III · Jungle</p>
+    <h2 class="branch__title"><em>Loud</em>&nbsp;leaves,<br/><span>quiet&nbsp;pacts.</span></h2>
+    <p class="branch__copy">
+      This is the jungle of the book — where Burfoot's fur picks up a new
+      world with every step. Each garment adopts one verified act of
+      rainforest protection: a square-metre of primary canopy secured against
+      clearance, tagged to your receipt.
+    </p>
+    <dl class="branch__spec">
+      <div><dt>Palette</dt><dd>Pantone 574 · 1385 · 4645</dd></div>
+      <div><dt>Fibre</dt><dd>FSC-traced viscose · 210&thinsp;gsm</dd></div>
+      <div><dt>Impact</dt><dd>1 m² primary canopy protected</dd></div>
+    </dl>
+  </header>
+
+  <figure class="garment garment--jungle" data-garment>
+    <div class="garment__thread"></div>
+    <svg class="garment__hanger" viewBox="0 0 120 60" aria-hidden="true">
+      <path d="M60 4 L60 18 M20 46 Q60 18 100 46 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <svg class="garment__tee" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <linearGradient id="jungleFabric" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#5b6a2a"/><stop offset="100%" stop-color="#2f3b15"/>
+        </linearGradient>
+      </defs>
+      <path d="M60 80 L110 50 Q160 34 210 50 L260 80 L300 110 L270 160 L240 140 L240 280 L80 280 L80 140 L50 160 L20 110 Z"
+            fill="url(#jungleFabric)" stroke="#0f1507" stroke-width="1.5"/>
+      <path d="M140 58 Q160 78 180 58" fill="none" stroke="#f1e9d4" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+      <rect x="108" y="118" width="44" height="44" rx="4" fill="#0f1507" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="170" y="120" width="40" height="40" rx="4" fill="#0f1507" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="150" y="180" width="60" height="40" rx="4" fill="#0f1507" opacity=".35" stroke="#f1e9d4" stroke-dasharray="2 3" stroke-width="1"/>
+    </svg>
+    <figcaption>
+      <span class="fig-no">Garment №JG-031</span>
+      <em>The Canopy Crewneck</em>
+      <span>8 patch anchors · ages 2–14</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ░░░ 06 ENGLISH GARDEN — LIMITED EDITION ░░░ -->
+<section class="branch branch--garden" id="garden" data-section="garden">
+  <div class="branch__backdrop" aria-hidden="true">
+    <div class="trellis"></div>
+    <div class="petals"></div>
+  </div>
+
+  <div class="trunk" aria-hidden="true"><div class="trunk__bar"></div></div>
+
+  <svg class="branch__arm branch__arm--right" viewBox="0 0 700 260" aria-hidden="true">
+    <path d="M0 60 C 160 70, 280 90, 420 150 C 480 180, 540 200, 620 210" fill="none" stroke="#2a1c10" stroke-width="14" stroke-linecap="round"/>
+    <path d="M0 60 C 160 70, 280 90, 420 150 C 480 180, 540 200, 620 210" fill="none" stroke="#4a3522" stroke-width="8" stroke-linecap="round"/>
+    <g fill="#b87e7a">
+      <circle cx="280" cy="118" r="5"/>
+      <circle cx="410" cy="158" r="5"/>
+      <circle cx="540" cy="198" r="5"/>
+    </g>
+  </svg>
+
+  <header class="branch__header branch__header--right">
+    <span class="seal">Limited<br/>Edition</span>
+    <p class="branch__num">Collection IV · English Garden</p>
+    <h2 class="branch__title"><em>A garden</em><br/>behind&nbsp;a&nbsp;<span>gate.</span></h2>
+    <p class="branch__copy">
+      A capsule run of 1,200 garments. Old-world roses, hedgerow finches,
+      bumblebee stripes. Every piece funds the restoration of one metre of
+      British hedgerow — the thinning spine of a countryside that once
+      carried everything.
+    </p>
+    <dl class="branch__spec">
+      <div><dt>Run</dt><dd>1,200 pieces · individually numbered</dd></div>
+      <div><dt>Palette</dt><dd>Pantone 5155 · 5777 · 4695</dd></div>
+      <div><dt>Impact</dt><dd>1 metre of hedgerow restored</dd></div>
+    </dl>
+  </header>
+
+  <figure class="garment garment--garden" data-garment>
+    <div class="garment__thread"></div>
+    <svg class="garment__hanger" viewBox="0 0 120 60" aria-hidden="true">
+      <path d="M60 4 L60 18 M20 46 Q60 18 100 46 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+    <svg class="garment__tee" viewBox="0 0 320 320" aria-hidden="true">
+      <defs>
+        <linearGradient id="gardenFabric" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#dcc5b9"/><stop offset="100%" stop-color="#b68e84"/>
+        </linearGradient>
+      </defs>
+      <path d="M60 80 L110 50 Q160 34 210 50 L260 80 L300 110 L270 160 L240 140 L240 280 L80 280 L80 140 L50 160 L20 110 Z"
+            fill="url(#gardenFabric)" stroke="#5c2a26" stroke-width="1.5"/>
+      <path d="M140 58 Q160 78 180 58" fill="none" stroke="#3b1816" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
+      <rect x="120" y="120" width="42" height="42" rx="4" fill="#3b1816" opacity=".15" stroke="#3b1816" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="170" y="160" width="50" height="50" rx="4" fill="#3b1816" opacity=".15" stroke="#3b1816" stroke-dasharray="2 3" stroke-width="1"/>
+      <rect x="105" y="200" width="42" height="36" rx="4" fill="#3b1816" opacity=".15" stroke="#3b1816" stroke-dasharray="2 3" stroke-width="1"/>
+    </svg>
+    <figcaption>
+      <span class="fig-no">Garment №EG-001 / 1200</span>
+      <em>The Orangery Smock</em>
+      <span>10 patch anchors · ages 0–8</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ░░░ 07 OUR STORY · THE BOOK ░░░ -->
+<section class="story" id="story" data-section="story">
+  <div class="trunk" aria-hidden="true"><div class="trunk__bar trunk__bar--wide"></div></div>
+
+  <div class="story__grid">
+    <p class="story__kicker">— II —</p>
+    <h2 class="story__title">
+      One story <em>becomes</em> a world.<br/>
+      One character <em>leads</em> the journey.
+    </h2>
+
+    <div class="story__body">
+      <p class="story__lead">
+        Burfoot began on a page. A creature of the jungle with a coat like
+        velcro — picking up every flower, feather and fern he brushed past —
+        sets out to solve a simple question: <em>why is the jungle so dark?</em>
+      </p>
+      <p>
+        What he finds is not an answer but a world. And what the world finds
+        in him is a way of being — curious, kind, unreasonably hopeful.
+        The book is for ages 2 to 6. The wardrobe, for 0 to 14. The mission,
+        for everyone who buys into either.
+      </p>
+      <p class="story__pull">
+        A world children can <em>step&nbsp;into</em> — anywhere.
+      </p>
+    </div>
+
+    <figure class="story__spread" id="book">
+      <div class="book">
+        <div class="book__page book__page--left">
+          <p class="book__text">
+            And on he went, gathering the forest to him like a coat of
+            <em>small&nbsp;kept&nbsp;things</em> — a feather, a flower, a
+            wondering&nbsp;leaf.
+          </p>
+          <span class="book__pageno">p. 14</span>
+        </div>
+        <div class="book__spine"></div>
+        <div class="book__page book__page--right">
+          <div class="book__illo">
+            <img src="assets/burfoot.jpeg" alt="Burfoot among wildflowers." />
+          </div>
+          <span class="book__pageno">p. 15</span>
+        </div>
+      </div>
+      <figcaption>
+        <span>Burfoot, the picture book</span>
+        <span class="fig-no">Printed on FSC Munken · 48&nbsp;pages · hardback</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ░░░ 08 SUSTAINABILITY / TRANSPARENCY LEDGER ░░░ -->
+<section class="sustain" id="sustainability" data-section="sustain">
+  <div class="trunk trunk--widening" aria-hidden="true"><div class="trunk__bar"></div></div>
+
+  <div class="sustain__grid">
+    <p class="sustain__kicker">— III —</p>
+    <h2 class="sustain__title">
+      Every thread, <em>accounted for.</em>
+    </h2>
+    <p class="sustain__lede">
+      We publish the supply chain the way a museum publishes its provenance:
+      openly, in full, with the name of the hand that made it.
+    </p>
+
+    <div class="ledger">
+      <div class="ledger__row ledger__row--head">
+        <span>Stage</span><span>Location</span><span>Partner</span><span>Verified</span>
+      </div>
+      <div class="ledger__row">
+        <span>Fibre</span><span>İzmir, Türkiye</span><span>Söke Organic Cotton Co-op</span><span>GOTS · 2026</span>
+      </div>
+      <div class="ledger__row">
+        <span>Spinning</span><span>Porto, Portugal</span><span>Fio do Norte</span><span>OEKO-TEX 100</span>
+      </div>
+      <div class="ledger__row">
+        <span>Dye</span><span>Biella, Italy</span><span>Casa Fornace (low-impact pigments)</span><span>ZDHC MRSL</span>
+      </div>
+      <div class="ledger__row">
+        <span>Cut &amp; Sew</span><span>Guimarães, Portugal</span><span>Atelier Ribeiro</span><span>Fair Wage Charter</span>
+      </div>
+      <div class="ledger__row">
+        <span>Patch Weave</span><span>Cusco, Peru</span><span>Asociación Awaq Wasi</span><span>WFTO Guarantee</span>
+      </div>
+      <div class="ledger__row">
+        <span>Take-back</span><span>Global</span><span>Burfoot Re-leaf programme</span><span>Free repair for life</span>
+      </div>
+    </div>
+
+    <aside class="sustain__notes">
+      <div>
+        <h3>Non-toxic by design</h3>
+        <p>Every dye and finish passes ZDHC and OEKO-TEX thresholds. No
+        PFAS, no phthalates, no formaldehyde.</p>
+      </div>
+      <div>
+        <h3>Designed to circle back</h3>
+        <p>When outgrown, send any garment back with prepaid post. We resell,
+        re-patch, or recycle — and send your child a new patch of their
+        choosing.</p>
+      </div>
+      <div>
+        <h3>Pantone-current, mood-timeless</h3>
+        <p>Each season we refresh palette — not shape. Garments stay in
+        rotation for years. Patches let the wardrobe grow up with the child.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ░░░ 09 MISSION · ROOTS ░░░ -->
+<section class="mission" id="mission" data-section="mission">
+  <div class="roots" aria-hidden="true">
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="none">
+      <path d="M780 0 C 780 60, 770 110, 760 160 C 750 220, 720 280, 660 320 C 560 380, 420 400, 280 440 C 180 468, 80 490, 0 510" fill="none" stroke="#2a1c10" stroke-width="10" stroke-linecap="round"/>
+      <path d="M820 0 C 820 60, 830 110, 840 160 C 850 220, 880 280, 940 320 C 1040 380, 1180 400, 1320 440 C 1420 468, 1520 490, 1600 510" fill="none" stroke="#2a1c10" stroke-width="10" stroke-linecap="round"/>
+      <path d="M800 0 C 805 60, 800 160, 810 260 C 815 340, 800 420, 800 520" fill="none" stroke="#2a1c10" stroke-width="14" stroke-linecap="round"/>
+      <path d="M790 160 C 740 200, 680 230, 620 260 M810 180 C 860 220, 920 250, 980 280 M790 260 C 720 300, 640 330, 560 360 M810 280 C 880 320, 960 350, 1040 380" fill="none" stroke="#4a3522" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="mission__grid">
+    <p class="mission__kicker">— IV —</p>
+    <h2 class="mission__title">
+      <em>One mission</em><br/>drives it forward.
+    </h2>
+    <p class="mission__lede">
+      For every garment sold, one tangible, measurable act of conservation is
+      carried out in the ecosystem the garment belongs to. Not a donation. A
+      deliverable — tracked, geo-tagged, and visible on your buyer's ledger.
+    </p>
+
+    <div class="counters">
+      <div class="counter" data-counter-target="18420">
+        <span class="counter__eyebrow">Forest</span>
+        <span class="counter__num" data-num>0</span>
+        <span class="counter__unit">saplings planted &amp; tagged</span>
+      </div>
+      <div class="counter" data-counter-target="9760">
+        <span class="counter__eyebrow">Ocean</span>
+        <span class="counter__num" data-num>0</span>
+        <span class="counter__unit">m² reef adopted</span>
+      </div>
+      <div class="counter" data-counter-target="12305">
+        <span class="counter__eyebrow">Jungle</span>
+        <span class="counter__num" data-num>0</span>
+        <span class="counter__unit">m² canopy protected</span>
+      </div>
+      <div class="counter" data-counter-target="2140">
+        <span class="counter__eyebrow">Garden</span>
+        <span class="counter__num" data-num>0</span>
+        <span class="counter__unit">m hedgerow restored</span>
+      </div>
+    </div>
+
+    <ul class="partners" aria-label="Partner organisations">
+      <li>One Tree Planted</li>
+      <li>Coral Gardeners</li>
+      <li>Rainforest Trust</li>
+      <li>PTES Hedgerow Fund</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ░░░ 10 SHOP / CTA ░░░ -->
+<section class="shop" id="shop" data-section="shop">
+  <div class="shop__inner">
+    <h2 class="shop__title">Enter <em>the&nbsp;wardrobe.</em></h2>
+    <p class="shop__lede">Four ecosystems. Dozens of patches. One small ritual:
+      every morning, a child chooses the world they'll wear.</p>
+
+    <div class="shop__grid">
+      <a class="card card--forest" href="#forest"><span>Forest</span><span class="card__cta">→</span></a>
+      <a class="card card--ocean" href="#ocean"><span>Ocean</span><span class="card__cta">→</span></a>
+      <a class="card card--jungle" href="#jungle"><span>Jungle</span><span class="card__cta">→</span></a>
+      <a class="card card--garden" href="#garden"><span>English Garden<small>Limited</small></span><span class="card__cta">→</span></a>
+    </div>
+
+    <form class="signup" onsubmit="event.preventDefault();this.querySelector('button').innerText='Filed.';">
+      <label for="em">Receive the field journal — four times a year, never&nbsp;more.</label>
+      <div class="signup__row">
+        <input type="email" id="em" name="email" placeholder="you@kindredmail.com" required />
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ░░░ 11 FOOTER / SOIL ░░░ -->
+<footer class="soil">
+  <div class="grass" aria-hidden="true"></div>
+  <div class="soil__inner">
+    <div class="soil__col">
+      <span class="nav__mark nav__mark--ghost">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <ellipse cx="18" cy="14" rx="6" ry="7"/><ellipse cx="30" cy="11" rx="5.5" ry="7"/><ellipse cx="41" cy="13" rx="5" ry="6"/><ellipse cx="50" cy="18" rx="4.5" ry="5"/>
+          <path d="M16 26 C10 34, 12 50, 22 56 C34 62, 52 56, 52 42 C52 32, 46 24, 38 22 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M40 28 C34 34, 30 42, 28 52 M40 30 C36 30, 32 30, 28 34 M38 38 C34 38, 30 39, 28 42 M36 46 C32 46, 30 47, 28 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <p class="soil__legal">© Burfoot &amp; Co. MMXXVI.<br/>A world they can wear. A future they'll protect.</p>
+    </div>
+    <div class="soil__col">
+      <h4>Wear</h4>
+      <ul><li><a href="#forest">Forest</a></li><li><a href="#ocean">Ocean</a></li><li><a href="#jungle">Jungle</a></li><li><a href="#garden">English Garden</a></li></ul>
+    </div>
+    <div class="soil__col">
+      <h4>Know</h4>
+      <ul><li><a href="#story">Our Story</a></li><li><a href="#sustainability">Sustainability</a></li><li><a href="#mission">Our Mission</a></li><li><a href="#book">The Book</a></li></ul>
+    </div>
+    <div class="soil__col">
+      <h4>Reach</h4>
+      <ul><li><a href="mailto:hello@burfoot.co">hello@burfoot.co</a></li><li><a href="#">Instagram</a></li><li><a href="#">Press</a></li><li><a href="#">Investors</a></li></ul>
+    </div>
+  </div>
+  <p class="soil__foot">Printed with care. Worn with wonder. Returned to the&nbsp;soil.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
