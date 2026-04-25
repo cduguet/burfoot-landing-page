@@ -1355,7 +1355,9 @@ body {
 html { background-color: #1c2014; }
 body { background: transparent; }
 
-/* shared panel rendering */
+/* shared panel rendering — sections forced to 16:9 so the 1920×1080
+   panels render at native aspect (no stretching, no scale mismatch
+   between consecutive sections, seam blends remain pixel-aligned). */
 .sky,
 .prologue,
 .branch,
@@ -1364,9 +1366,30 @@ body { background: transparent; }
 .mission,
 .shop,
 .soil {
+  height: 56.25vw !important;          /* 16:9 of viewport width */
+  min-height: 0 !important;
   background-repeat: no-repeat !important;
   background-position: top center !important;
-  background-size: 100% 100% !important;
+  background-size: 100% 100% !important; /* exact fit, no stretch since 16:9 */
+  overflow: hidden !important;
+}
+
+@media (max-width: 880px) {
+  /* on narrow viewports the 16:9 section gets too short for content;
+     fall back to viewport-height and accept that the panel's bottom
+     edge crops via cover (top edge stays pinned, where it matters). */
+  .sky,
+  .prologue,
+  .branch,
+  .story,
+  .sustain,
+  .mission,
+  .shop,
+  .soil {
+    height: auto !important;
+    min-height: 100vh !important;
+    background-size: cover !important;
+  }
 }
 
 .sky            { background-image: url("assets/panels/p01.png") !important; }
@@ -1469,10 +1492,10 @@ body { background: transparent; }
   z-index: 0;
   pointer-events: none;
 }
-.sustain::after { background: linear-gradient(to bottom, rgba(239, 230, 207, .55) 0%, rgba(239, 230, 207, .80) 100%); }
-.mission::after { background: linear-gradient(to bottom, rgba(220, 200, 160, .35) 0%, rgba(80, 50, 30, .55) 100%); }
-.shop::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .55) 0%, rgba(20, 12, 6, .75) 100%); }
-.soil::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .55) 0%, rgba(8, 4, 2, .85) 100%); }
+.sustain::after { background: linear-gradient(to bottom, rgba(239, 230, 207, .35) 0%, rgba(239, 230, 207, .55) 100%); }
+.mission::after { background: linear-gradient(to bottom, rgba(220, 200, 160, .20) 0%, rgba(80, 50, 30, .40) 100%); }
+.shop::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .35) 0%, rgba(20, 12, 6, .55) 100%); }
+.soil::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .35) 0%, rgba(8, 4, 2, .65) 100%); }
 .sustain__grid, .mission__grid, .shop__inner, .soil__inner { position: relative; z-index: 2; }
 
 /* ----- MOBILE TWEAKS (image scales down hard) ----- */
