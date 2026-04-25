@@ -1344,3 +1344,144 @@ body {
   .book { transform: none; }
   .partners { font-size: 18px; }
 }
+
+/* ============================================================
+   PAINTED TREE BACKGROUND — per-section panels
+   Eleven 16:9 panels (assets/panels/*.png) stack behind each
+   section so the central tree is continuous through the scroll.
+   Atmospheric veils (::after) handle text contrast.
+   ============================================================ */
+
+html { background-color: #1c2014; }
+body { background: transparent; }
+
+/* shared panel rendering */
+.sky,
+.prologue,
+.branch,
+.story,
+.sustain,
+.mission,
+.shop,
+.soil {
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+  background-size: 100% 100% !important;
+}
+
+.sky            { background-image: url("assets/panels/p01.png") !important; }
+.prologue       { background-image: url("assets/panels/p02.png") !important; }
+.branch--forest { background-image: url("assets/panels/p03.png") !important; }
+.branch--ocean  { background-image: url("assets/panels/ocean.png") !important; }
+.branch--jungle { background-image: url("assets/panels/jungle.png") !important; }
+.branch--garden { background-image: url("assets/panels/garden.png") !important; }
+.story          { background-image: url("assets/panels/p04.png") !important; }
+.sustain        { background-image: url("assets/panels/p05.png") !important; }
+.mission        { background-image: url("assets/panels/p06.png") !important; }
+.shop           { background-image: url("assets/panels/shop.png") !important; }
+.soil           { background-image: url("assets/panels/p07.png") !important; }
+
+/* hide abstract SVG decorations now superseded by the painted plate */
+.canopy,
+.trunk, .trunk--start, .trunk--widening, .trunk__bar, .trunk__flourish,
+.branch__arm,
+.branch__backdrop,
+.roots,
+.sky__weather, .sky__sun, .sky__bird {
+  display: none !important;
+}
+
+/* ----- HERO / SKY ----- */
+.sky { padding-top: 110px; }
+.sky::before { display: none !important; }
+
+/* hero text needs to read against painted sky + canopy — switch to parchment */
+.hero__title { color: var(--paper-lit); text-shadow: 0 6px 24px rgba(8, 16, 22, .55); }
+.hero__title .line--ink { color: var(--ember); }
+.hero__lede {
+  color: var(--ink);
+  background: rgba(245, 236, 214, .82);
+  padding: 18px 22px;
+  border-left: 2px solid var(--ember);
+  max-width: 42ch;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 12px 30px -10px rgba(0,0,0,.4);
+}
+.tag {
+  background: rgba(245, 236, 214, .82);
+  color: var(--ink);
+  border-color: rgba(21, 27, 46, .35);
+  backdrop-filter: blur(2px);
+}
+.scroll-cue { color: var(--paper-lit); text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+.scroll-cue__line { background: linear-gradient(to bottom, var(--paper-lit) 0%, transparent 100%); }
+
+/* shrink and reposition the Burfoot specimen card so it complements the painted treehouse */
+.hero__portrait {
+  max-width: 280px;
+  margin-top: 60px;
+}
+
+/* ----- ATMOSPHERIC VEILS (over the painted panels) ----- */
+.prologue::after,
+.branch--forest::after,
+.branch--ocean::after,
+.branch--jungle::after,
+.branch--garden::after,
+.story::after {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.prologue::after     { background: linear-gradient(to bottom, rgba(20, 14, 6, .25) 0%, rgba(40, 32, 14, .15) 50%, rgba(30, 30, 18, .30) 100%); }
+.branch--forest::after  { background: linear-gradient(to bottom, rgba(10, 18, 8, .18) 0%, rgba(10, 18, 8, .40) 100%); }
+.branch--ocean::after   { background: linear-gradient(to bottom, rgba(15, 35, 50, .22) 0%, rgba(10, 28, 42, .42) 100%); }
+.branch--jungle::after  { background: linear-gradient(to bottom, rgba(20, 40, 24, .25) 0%, rgba(15, 30, 18, .45) 100%); }
+.branch--garden::after  { background: linear-gradient(to bottom, rgba(228, 184, 168, .15) 0%, rgba(80, 50, 40, .40) 100%); }
+.story::after           { background: linear-gradient(to bottom, rgba(10, 16, 8, .35) 0%, rgba(10, 16, 8, .55) 100%); }
+
+/* lift content above the veils */
+.prologue > *:not(.trunk),
+.branch__header,
+.branch .garment,
+.branch .patch,
+.story__grid {
+  position: relative;
+  z-index: 2;
+}
+
+/* ----- TEXT CONTRAST ON DARK VEILED SECTIONS ----- */
+.prologue, .branch--forest, .branch--ocean, .branch--jungle { color: var(--paper-lit); }
+.branch--garden { color: var(--ink); }
+
+/* keep specimen-cards punchy on darkened backdrops */
+.specimen-label { box-shadow: 0 1px 0 var(--paper-lit), 0 0 0 6px var(--paper), 0 18px 50px -8px rgba(0, 0, 0, .65); }
+
+/* ----- LOWER SECTIONS (Sustain → Mission → Shop → Footer) -----
+   Each now also has its own painted panel. We add the same veil
+   treatment so text reads — sustain wants a paper-cream lift (dark
+   ink text), the others stay dark for parchment text on earth. */
+.sustain, .mission, .shop, .soil { position: relative; isolation: isolate; }
+.sustain::after, .mission::after, .shop::after, .soil::after {
+  content: "";
+  position: absolute; inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.sustain::after { background: linear-gradient(to bottom, rgba(239, 230, 207, .55) 0%, rgba(239, 230, 207, .80) 100%); }
+.mission::after { background: linear-gradient(to bottom, rgba(220, 200, 160, .35) 0%, rgba(80, 50, 30, .55) 100%); }
+.shop::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .55) 0%, rgba(20, 12, 6, .75) 100%); }
+.soil::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .55) 0%, rgba(8, 4, 2, .85) 100%); }
+.sustain__grid, .mission__grid, .shop__inner, .soil__inner { position: relative; z-index: 2; }
+
+/* ----- MOBILE TWEAKS (image scales down hard) ----- */
+@media (max-width: 760px) {
+  /* on small viewports the painted image ends much earlier — soften the
+     handoff by darkening the body fallback to the image's bottom mossy
+     tone so the empty zone reads as continuous forest floor */
+  html { background-color: #1a2418; }
+  .hero__portrait { display: none !important; }
+  .hero__lede { background: rgba(245, 236, 214, .9); }
+}
+
