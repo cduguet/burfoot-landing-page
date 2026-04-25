@@ -349,15 +349,11 @@
     });
   }
 
-  // hook to each section
-  renderPatchesInto($("#forest"),  patches.forest);
-  renderPatchesInto($("#ocean"),   patches.ocean);
-  renderPatchesInto($("#jungle"),  patches.jungle);
-  renderPatchesInto($("#garden"),  patches.garden);
+  // (collection sections removed — patches no longer rendered into the page)
 
   /* ---------- NAV THEME SHIFT ---------- */
   const nav = $("[data-nav]");
-  const darkSections = new Set(["prologue", "forest", "ocean", "jungle", "story", "mission", "shop"]);
+  const darkSections = new Set(["prologue", "story", "mission", "shop"]);
   const onView = entries => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;

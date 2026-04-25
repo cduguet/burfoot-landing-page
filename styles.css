@@ -1355,12 +1355,11 @@ body {
 html { background-color: #1c2014; }
 body { background: transparent; }
 
-/* shared panel rendering — sections forced to 16:9 so the 1920×1080
-   panels render at native aspect (no stretching, no scale mismatch
-   between consecutive sections, seam blends remain pixel-aligned). */
+/* Sections forced to 16:9 so the 1920×1080 panels render at native
+   aspect — no stretching, no scale mismatch between sections, the
+   seam blends stay pixel-aligned. */
 .sky,
 .prologue,
-.branch,
 .story,
 .sustain,
 .mission,
@@ -1370,17 +1369,13 @@ body { background: transparent; }
   min-height: 0 !important;
   background-repeat: no-repeat !important;
   background-position: top center !important;
-  background-size: 100% 100% !important; /* exact fit, no stretch since 16:9 */
+  background-size: 100% 100% !important;
   overflow: hidden !important;
 }
 
 @media (max-width: 880px) {
-  /* on narrow viewports the 16:9 section gets too short for content;
-     fall back to viewport-height and accept that the panel's bottom
-     edge crops via cover (top edge stays pinned, where it matters). */
   .sky,
   .prologue,
-  .branch,
   .story,
   .sustain,
   .mission,
@@ -1392,17 +1387,13 @@ body { background: transparent; }
   }
 }
 
-.sky            { background-image: url("assets/panels/p01.png") !important; }
-.prologue       { background-image: url("assets/panels/p02.png") !important; }
-.branch--forest { background-image: url("assets/panels/p03.png") !important; }
-.branch--ocean  { background-image: url("assets/panels/ocean.png") !important; }
-.branch--jungle { background-image: url("assets/panels/jungle.png") !important; }
-.branch--garden { background-image: url("assets/panels/garden.png") !important; }
-.story          { background-image: url("assets/panels/p04.png") !important; }
-.sustain        { background-image: url("assets/panels/p05.png") !important; }
-.mission        { background-image: url("assets/panels/p06.png") !important; }
-.shop           { background-image: url("assets/panels/shop.png") !important; }
-.soil           { background-image: url("assets/panels/p07.png") !important; }
+.sky      { background-image: url("assets/panels/p01.png") !important; }
+.prologue { background-image: url("assets/panels/p02.png") !important; }
+.story    { background-image: url("assets/panels/p03.png") !important; }
+.sustain  { background-image: url("assets/panels/p04.png") !important; }
+.mission  { background-image: url("assets/panels/p05.png") !important; }
+.shop     { background-image: url("assets/panels/p06.png") !important; }
+.soil     { background-image: url("assets/panels/p07.png") !important; }
 
 /* hide abstract SVG decorations now superseded by the painted plate */
 .canopy,

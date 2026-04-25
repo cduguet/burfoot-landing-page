@@ -15,19 +15,15 @@ PANEL_DIR = Path(__file__).resolve().parent.parent / "assets" / "panels"
 TARGET    = (1920, 1080)   # 16:9, full HD
 SEAM      = 80             # blend zone height in px
 
-# top-to-bottom order matching the website sections
+# Seven sliced panels, top-to-bottom, mapped to seven website sections.
 ORDER = [
-    "p01",   # Hero (sky + treehouse)
-    "p02",   # Prologue (canopy)
-    "p03",   # Forest
-    "ocean", # Ocean
-    "jungle",# Jungle
-    "garden",# English Garden
-    "p04",   # Story
-    "p05",   # Sustainability
-    "p06",   # Mission (roots emerging)
-    "shop",  # Shop (deep root cave)
-    "p07",   # Footer (deep roots + magic pool)
+    "p01",   # Hero            — sky + treehouse
+    "p02",   # Prologue        — canopy + fork
+    "p03",   # Story / Book    — upper trunk
+    "p04",   # Sustainability  — mid trunk
+    "p05",   # Mission         — lower trunk + understory
+    "p06",   # Shop            — base + emerging roots
+    "p07",   # Footer          — deep roots + magic pool
 ]
 
 def upscale_all():
