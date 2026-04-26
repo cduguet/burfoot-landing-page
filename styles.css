@@ -1346,18 +1346,25 @@ body {
 }
 
 /* ============================================================
-   PAINTED TREE BACKGROUND — per-section panels
-   Eleven 16:9 panels (assets/panels/*.png) stack behind each
-   section so the central tree is continuous through the scroll.
-   Atmospheric veils (::after) handle text contrast.
+   PAINTED TREE BACKGROUND — single continuous image
+   One super-resed plate (assets/tree-bg-hires.webp, 1024×3334)
+   covers the whole body. Sections become transparent overlays
+   sized so the painted scene aligns: 7 sections × 46.51vw =
+   325.6vw = 100vw × (3334/1024). Atmospheric ::after veils
+   handle text contrast.
    ============================================================ */
 
 html { background-color: #1c2014; }
-body { background: transparent; }
+body {
+  background-color: #1c2014;
+  background-image: url("assets/tree-bg-hires.webp");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  background-attachment: scroll;
+}
 
-/* Sections forced to 16:9 so the 1920×1080 panels render at native
-   aspect — no stretching, no scale mismatch between sections, the
-   seam blends stay pixel-aligned. */
+/* Each section = 1/7 of the painted plate's natural height. */
 .sky,
 .prologue,
 .story,
@@ -1365,15 +1372,15 @@ body { background: transparent; }
 .mission,
 .shop,
 .soil {
-  height: 56.25vw !important;          /* 16:9 of viewport width */
+  height: 46.51vw !important;          /* (3334/1024)/7 × 100vw */
   min-height: 0 !important;
-  background-repeat: no-repeat !important;
-  background-position: top center !important;
-  background-size: 100% 100% !important;
+  background: transparent !important;
   overflow: hidden !important;
 }
 
 @media (max-width: 880px) {
+  /* on narrow screens let sections grow with content; stretch the plate */
+  body { background-size: 100% 100%; }
   .sky,
   .prologue,
   .story,
@@ -1383,17 +1390,8 @@ body { background: transparent; }
   .soil {
     height: auto !important;
     min-height: 100vh !important;
-    background-size: cover !important;
   }
 }
-
-.sky      { background-image: url("assets/panels/p01.png") !important; }
-.prologue { background-image: url("assets/panels/p02.png") !important; }
-.story    { background-image: url("assets/panels/p03.png") !important; }
-.sustain  { background-image: url("assets/panels/p04.png") !important; }
-.mission  { background-image: url("assets/panels/p05.png") !important; }
-.shop     { background-image: url("assets/panels/p06.png") !important; }
-.soil     { background-image: url("assets/panels/p07.png") !important; }
 
 /* hide abstract SVG decorations now superseded by the painted plate */
 .canopy,
