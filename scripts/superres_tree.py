@@ -123,6 +123,18 @@ NON-EDITING AREA — DO NOT TOUCH anything OUTSIDE the magenta rectangle:
 
 Match the top edge and bottom edge of the source exactly so the panels stitch."""
 
+# Used when BURFOOT_BOX is None — model is free to relocate Burfoot to
+# wherever reads as natural in the scene (e.g. the wooden platform).
+PROMPT_FIRST_NOMASK = """Recreate the FIRST reference image at higher resolution and crisper detail.
+
+PRESERVE the entire scene: same tree, same trunk, same canopy, same branches, same treehouse, same sky and ocean horizon, same painterly Studio Ghibli / illustrated naturalist style, same colors, same lighting, same composition. Same width and height.
+
+ONE CHANGE — character placement:
+- Place the character shown in the SECOND reference (Burfoot — a small soft round furry friendly forest creature with antler-like horns and a floral crown) sitting on the WOODEN PLATFORM in front of the treehouse, centered, painted in the same illustrated style as the rest of the scene. Burfoot is the new resident — replace any other small creature in the scene with him.
+- Burfoot should be a clearly visible focal element on the platform, not tucked away on a branch.
+
+Do NOT add anything else. Match the bottom edge of the source exactly so the panels stitch."""
+
 PROMPT_CHAIN = """Recreate the FIRST reference image at higher resolution and crisper detail.
 
 The FIRST reference has a bright MAGENTA RECTANGLE drawn around its TOP region. This rectangle is a MASK marker. The pixels INSIDE the magenta rectangle are a LOCKED, NON-EDITING ZONE — they are the bottom edge of the panel above this one and they MUST appear pixel-identical in your output. Do not redraw, restyle, recolor, or shift them. Do NOT include the magenta rectangle line itself in your output.
@@ -155,7 +167,9 @@ def add_edit_mask(src_path: Path, box: tuple[int,int,int,int]) -> Path:
 
 # Original creature in src_1 (1024x1032): small horned furry thing peeking
 # from the right side of the treehouse. Box hugs that area only.
-BURFOOT_BOX = (720, 200, 940, 420)
+# Set to None to let the model freely place Burfoot (typically on the
+# wooden platform — the more central/featured position).
+BURFOOT_BOX = None
 
 LOCK_H = 256  # rows pinned at the top of each chain panel
 
@@ -201,9 +215,13 @@ def superres(parts):
             continue
         print(f"[sr] part {i+1}")
         if i == 0:
-            masked = add_edit_mask(p, BURFOOT_BOX)
-            print(f"  edit-mask drawn at {BURFOOT_BOX}")
-            data, used = call(PROMPT_FIRST, [masked, BURFOOT])
+            if BURFOOT_BOX is not None:
+                masked = add_edit_mask(p, BURFOOT_BOX)
+                print(f"  edit-mask drawn at {BURFOOT_BOX}")
+                data, used = call(PROMPT_FIRST, [masked, BURFOOT])
+            else:
+                print(f"  no edit-mask — Burfoot placement is prompt-driven")
+                data, used = call(PROMPT_FIRST_NOMASK, [p, BURFOOT])
             target.write_bytes(data)
         else:
             locked = build_locked_source(p, out[-1], LOCK_H)

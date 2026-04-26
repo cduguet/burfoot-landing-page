@@ -1434,34 +1434,9 @@ body {
   margin-top: 60px;
 }
 
-/* ----- ATMOSPHERIC VEILS (over the painted panels) ----- */
-.prologue::after,
-.branch--forest::after,
-.branch--ocean::after,
-.branch--jungle::after,
-.branch--garden::after,
-.story::after {
-  content: "";
-  position: absolute; inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-.prologue::after     { background: linear-gradient(to bottom, rgba(20, 14, 6, .25) 0%, rgba(40, 32, 14, .15) 50%, rgba(30, 30, 18, .30) 100%); }
-.branch--forest::after  { background: linear-gradient(to bottom, rgba(10, 18, 8, .18) 0%, rgba(10, 18, 8, .40) 100%); }
-.branch--ocean::after   { background: linear-gradient(to bottom, rgba(15, 35, 50, .22) 0%, rgba(10, 28, 42, .42) 100%); }
-.branch--jungle::after  { background: linear-gradient(to bottom, rgba(20, 40, 24, .25) 0%, rgba(15, 30, 18, .45) 100%); }
-.branch--garden::after  { background: linear-gradient(to bottom, rgba(228, 184, 168, .15) 0%, rgba(80, 50, 40, .40) 100%); }
-.story::after           { background: linear-gradient(to bottom, rgba(10, 16, 8, .35) 0%, rgba(10, 16, 8, .55) 100%); }
-
-/* lift content above the veils */
-.prologue > *:not(.trunk),
-.branch__header,
-.branch .garment,
-.branch .patch,
-.story__grid {
-  position: relative;
-  z-index: 2;
-}
+/* Section veils intentionally removed — they reset at every section
+   boundary, which made scrolling look choppy. Text contrast on the
+   painted plate is handled via text-shadow on copy in dark sections. */
 
 /* ----- TEXT CONTRAST ON DARK VEILED SECTIONS ----- */
 .prologue, .branch--forest, .branch--ocean, .branch--jungle { color: var(--paper-lit); }
@@ -1470,22 +1445,27 @@ body {
 /* keep specimen-cards punchy on darkened backdrops */
 .specimen-label { box-shadow: 0 1px 0 var(--paper-lit), 0 0 0 6px var(--paper), 0 18px 50px -8px rgba(0, 0, 0, .65); }
 
-/* ----- LOWER SECTIONS (Sustain → Mission → Shop → Footer) -----
-   Each now also has its own painted panel. We add the same veil
-   treatment so text reads — sustain wants a paper-cream lift (dark
-   ink text), the others stay dark for parchment text on earth. */
-.sustain, .mission, .shop, .soil { position: relative; isolation: isolate; }
-.sustain::after, .mission::after, .shop::after, .soil::after {
-  content: "";
-  position: absolute; inset: 0;
-  z-index: 0;
-  pointer-events: none;
+.sustain, .mission, .shop, .soil { position: relative; }
+
+/* Text readability over the painted plate — replaces the per-section
+   veils with localized contrast on copy that sat over them. */
+.prologue,
+.story,
+.mission,
+.shop,
+.soil {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .55), 0 0 18px rgba(0, 0, 0, .35);
 }
-.sustain::after { background: linear-gradient(to bottom, rgba(239, 230, 207, .35) 0%, rgba(239, 230, 207, .55) 100%); }
-.mission::after { background: linear-gradient(to bottom, rgba(220, 200, 160, .20) 0%, rgba(80, 50, 30, .40) 100%); }
-.shop::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .35) 0%, rgba(20, 12, 6, .55) 100%); }
-.soil::after    { background: linear-gradient(to bottom, rgba(20, 12, 6, .35) 0%, rgba(8, 4, 2, .65) 100%); }
-.sustain__grid, .mission__grid, .shop__inner, .soil__inner { position: relative; z-index: 2; }
+.prologue .specimen-label,
+.story .book,
+.mission .counters,
+.shop .card,
+.shop .signup {
+  text-shadow: none;
+}
+.sustain {
+  text-shadow: 0 1px 1px rgba(255, 248, 230, .55);
+}
 
 /* ----- MOBILE TWEAKS (image scales down hard) ----- */
 @media (max-width: 760px) {
